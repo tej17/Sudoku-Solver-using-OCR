@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="sudoku.js"></script>
+	<script type="text/javascript" src="html2canvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<title></title>
+	<style type="text/css">
+		td{
+			width: 50px;
+			height: 30px;
+		}
+		input{
+			width: 50px;
+			height: 30px;
+			border: 0px;
+			padding-left: 25px;
+			text-decoration: bold;	
+		}
+		td, th{
+			border: 0.5px solid black;
+		}
+		table{
+			border-collapse: collapse;
+			margin-left: 27%;
+			margin-top: 5%;
+			position: absolute;
+		}
+		button{
+			width: 90px; align-self: center; height: 50px; position: absolute; margin-left: 47%; margin-top: 30%;
+		}
+	</style>
+</head>
+<body>
+<h1 style="text-align: center;">Enter the numbers for sudoku</h1>
+<table border = "1px solid black;" id = "container">
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+	<tr>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+		<td><input name=""></td>
+	</tr>
+</table>
+<button onclick="takeScreenShot()">Take ScreenShot</button>
+</body>
+</html>
