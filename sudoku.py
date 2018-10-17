@@ -1,5 +1,4 @@
 import cv2
-
 def findNextCellToFill(grid, i, j):
 	for x in range(i,9):
 		for y in range(j,9):
@@ -16,8 +15,7 @@ def isValid(grid, i, j, e):
 	if rowOk:
 		columnOk = all([e != grid[x][j] for x in range(9)])
 		if columnOk:
-			# finding the top left x,y co-ordinates of the section containing the i,j cell
-			secTopX, secTopY = 3 *(i//3), 3 *(j//3) #floored quotient should be used here. 
+			secTopX, secTopY = 3 *(i//3), 3 *(j//3)
 			for x in range(secTopX, secTopX+3):
 				for y in range(secTopY, secTopY+3):
 					if grid[x][y] == e:
@@ -45,22 +43,12 @@ img = cv2.imread('db/sudoku.jpg')
 C,H,W = img.shape[::-1]
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 ret,thresh = cv2.threshold(gray,220,255,0)
-"""
-cv2.imshow("threshold",thresh)
-cv2.imshow("gray",gray)
-cv2.imshow("original",img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-"""
 _,contours,_ = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-#print(len(contours))
 for i in range(len(contours)):
-	#print(contours[i])
 	perimeter = cv2.arcLength(contours[i],True)
 	if perimeter > 25 and perimeter < 50:
 		list1.append(i)
-		#cv2.drawContours(img, contours, -1, (0,255,0), 2)
-#print(list1)
+		cv2.drawContours(img, contours, -1, (0,255,0), 2)
 counter = -1
 column = -1;
 temp1 = []
@@ -71,9 +59,9 @@ for x in list1[::-1	]:
 		cy = int(M['m01']/M['m00'])
 	else:
 		cx,cy = 0,0
-	#cv2.rectangle(img,(cx-10,cy-10),(cx+10,cy+10),(0,255,255), 1)
+	cv2.rectangle(img,(cx-10,cy-10),(cx+10,cy+10),(0,255,255), 1)
 	cropped = img[cy-10:cy+10,cx-10:cx+10]
-	#cv2.imshow("cropped",cropped)
+	cv2.imshow("cropped",cropped)
 	
 	counter = counter+1
 	maxval = -1
@@ -91,13 +79,12 @@ for x in list1[::-1	]:
 	temp.append(index)
 	grid1.append(temp)
 
+
 for k in range(0,9):
 	temp1=[]	
 	for j in range(0,9):
 		temp1.append(0)
 	inp.append(temp1)
-
-
 
 
 for l in grid1:
@@ -112,8 +99,7 @@ if possibility==True:
 else:
 	print("Not possible")
 
-"""
+
 cv2.imshow("original",img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-"""
